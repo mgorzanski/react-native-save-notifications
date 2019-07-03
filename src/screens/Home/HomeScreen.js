@@ -3,6 +3,8 @@ import { StyleSheet, Image } from 'react-native';
 import { Content, Card, CardItem, Text, Grid, Col, Icon, Row, Header, Left, Body, Title, Container, Button, Right } from 'native-base';
 import { material, systemWeights, materialColors } from 'react-native-typography';
 
+import * as globalStyles from './../../styles/globalStyles';
+
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     drawerLabel: 'Home'
@@ -11,14 +13,14 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <Container>
-        <Header>
+        <Header style={styles.headerBar}>
           <Left>
             <Button transparent onPress={() => this.props.navigation.openDrawer()}>
-              <Icon name="menu" />
+              <Icon name="menu" style={styles.headerBarIcon} />
             </Button>
           </Left>
           <Body>
-            <Title>Home</Title>
+            <Title style={styles.headerBarTitle}>Home</Title>
           </Body>
           <Right />
         </Header>
@@ -96,6 +98,9 @@ export default class HomeScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  headerBar: globalStyles.headerBar,
+  headerBarTitle: globalStyles.headerBarTitle,
+  headerBarIcon: globalStyles.headerBarIcon,
   header: {
     display: 'flex',
     justifyContent: 'space-between'
