@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Image } from 'react-native';
-import { Content, Card, CardItem, Text, Grid, Col, Icon, Row } from 'native-base';
+import { Content, Card, CardItem, Text, Grid, Col, Icon, Row, Header, Left, Body, Title, Container, Button, Right } from 'native-base';
 import { material, systemWeights, materialColors } from 'react-native-typography';
 
 export default class HomeScreen extends React.Component {
@@ -10,74 +10,87 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-      <Content padder>
-        <Card>
-          <CardItem header bordered style={styles.header}>
-            <Text style={styles.title}>Recent notifications</Text>
-            <Text style={styles.clearAllButton}>Clear all</Text>
-          </CardItem>
-          <CardItem bordered>
-            <Grid>
-              <Col style={styles.appIcon}>
-                <Image source={require('./../../assets/fb.jpg')} style={styles.appIconImage} />
-              </Col>
-              <Col style={styles.notificationDetails}>
-                <Row>
-                  <Col style={styles.appName}>
-                    <Text style={styles.appNameText}>Facebook Messenger</Text>
-                  </Col>
-                  <Col style={styles.notificationTime}>
-                    <Text style={styles.notificationTimeText}>06:07am</Text>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <Text style={styles.notificationTitle}>Nola Harrell</Text>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <Text style={styles.notificationDescription}>Commented on your post "What a lovely Chair!"</Text>
-                  </Col>
-                </Row>
-              </Col>
-              <Col style={styles.actions}>
-                <Icon type="MaterialCommunityIcons" name="close" style={styles.actionIcon} />
-              </Col>
-            </Grid>
-          </CardItem>
-          <CardItem bordered>
-            <Grid>
-              <Col style={styles.appIcon}>
-                <Image source={require('./../../assets/fb.jpg')} style={styles.appIconImage} />
-              </Col>
-              <Col style={styles.notificationDetails}>
-                <Row>
-                  <Col style={styles.appName}>
-                    <Text style={styles.appNameText}>Facebook Messenger</Text>
-                  </Col>
-                  <Col style={styles.notificationTime}>
-                    <Text style={styles.notificationTimeText}>06:07am</Text>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <Text style={styles.notificationTitle}>Nola Harrell</Text>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col>
-                    <Text style={styles.notificationDescription}>Commented on your post "What a lovely Chair!"</Text>
-                  </Col>
-                </Row>
-              </Col>
-              <Col style={styles.actions}>
-                <Icon type="MaterialCommunityIcons" name="close" style={styles.actionIcon} />
-              </Col>
-            </Grid>
-          </CardItem>
-        </Card>
-      </Content>
+      <Container>
+        <Header>
+          <Left>
+            <Button transparent onPress={() => this.props.navigation.openDrawer()}>
+              <Icon name="menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Home</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content padder>
+          <Card>
+            <CardItem header bordered style={styles.header}>
+              <Text style={styles.title}>Recent notifications</Text>
+              <Text style={styles.clearAllButton}>Clear all</Text>
+            </CardItem>
+            <CardItem bordered>
+              <Grid>
+                <Col style={styles.appIcon}>
+                  <Image source={require('./../../assets/fb.jpg')} style={styles.appIconImage} />
+                </Col>
+                <Col style={styles.notificationDetails}>
+                  <Row>
+                    <Col style={styles.appName}>
+                      <Text style={styles.appNameText}>Facebook Messenger</Text>
+                    </Col>
+                    <Col style={styles.notificationTime}>
+                      <Text style={styles.notificationTimeText}>06:07am</Text>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Text style={styles.notificationTitle}>Nola Harrell</Text>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Text style={styles.notificationDescription}>Commented on your post "What a lovely Chair!"</Text>
+                    </Col>
+                  </Row>
+                </Col>
+                <Col style={styles.actions}>
+                  <Icon type="MaterialCommunityIcons" name="close" style={styles.actionIcon} />
+                </Col>
+              </Grid>
+            </CardItem>
+            <CardItem bordered>
+              <Grid>
+                <Col style={styles.appIcon}>
+                  <Image source={require('./../../assets/fb.jpg')} style={styles.appIconImage} />
+                </Col>
+                <Col style={styles.notificationDetails}>
+                  <Row>
+                    <Col style={styles.appName}>
+                      <Text style={styles.appNameText}>Facebook Messenger</Text>
+                    </Col>
+                    <Col style={styles.notificationTime}>
+                      <Text style={styles.notificationTimeText}>06:07am</Text>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Text style={styles.notificationTitle}>Nola Harrell</Text>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Text style={styles.notificationDescription}>Commented on your post "What a lovely Chair!"</Text>
+                    </Col>
+                  </Row>
+                </Col>
+                <Col style={styles.actions}>
+                  <Icon type="MaterialCommunityIcons" name="close" style={styles.actionIcon} />
+                </Col>
+              </Grid>
+            </CardItem>
+          </Card>
+        </Content>
+      </Container>
     );
   }
 }
