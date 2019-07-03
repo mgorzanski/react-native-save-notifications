@@ -1,6 +1,7 @@
 export const primaryColor = '#ffea00';
 export const primaryColorDark = '#c7b800';
 export const primaryColorLight = '#ffff56';
+export const secondaryColor = '#42a5f5';
 
 export const headerBar = {
   backgroundColor: primaryColor

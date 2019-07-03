@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     ...material.headline
   },
   clearAllButton: {
-    color: '#42a5f5'
+    color: globalStyles.secondaryColor
   },
   appIcon: {
     width: 'auto',
